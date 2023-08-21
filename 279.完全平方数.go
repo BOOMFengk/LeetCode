@@ -1,16 +1,10 @@
-package main
-import (
-	"fmt"
-	"math"
-)
-func main() {
+/*
+ * @lc app=leetcode.cn id=279 lang=golang
+ *
+ * [279] 完全平方数
+ */
 
-
-
-	dp := numSquares(12)
-	fmt.Println(dp)
-}
-
+// @lc code=start
 func numSquares(n int) int {
 	nums:=make([]int, 100)
 	for i := range nums {
@@ -26,7 +20,7 @@ func numSquares(n int) int {
 	for i := 0; i < 100; i++ {
 		for j := nums[i]; j <= n; j++ {
 			dp[j] = min(dp[j],dp[j-nums[i]]+1)	
-			fmt.Println(dp,j,i)
+
 
 		}
 
@@ -40,3 +34,5 @@ func min(i,j int)int{
 	}
 	return j
 }
+// @lc code=end
+
